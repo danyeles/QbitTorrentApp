@@ -22,7 +22,7 @@ pipeline {
                     sh """
                         docker run -d \\
                         --name ${CONTAINER_NAME} \\
-                        --restart unless-stopped \\
+                        --restart always \\
                         -e QBT_EULA=accept \\
                         -e QBT_VERSION=latest \\
                         -e QBT_WEBUI_PORT=8787 \\
