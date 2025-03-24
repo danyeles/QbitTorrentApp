@@ -37,7 +37,9 @@ pipeline {
                         -v /media/${USERNAME}/Media:/Media \\
                         -v /media/${USERNAME}/Media/Downloads:/downloads \\
                         -v /media/${USERNAME}/Media/Movies:/Movies \\
-                        -v /media/${USERNAME}/Media/TVShows:/TVShows \\
+                        -v /media/${USERNAME}/Media/MyMovies:/MyMovies \\
+                        -v /media/${USERNAME}/Media/TVShows:/TVShows \\                        
+                        -v /media/${USERNAME}/Media/MyTVShows:/MyTVShows \\
                         ${DOCKER_IMAGE}
                     """
                 }
