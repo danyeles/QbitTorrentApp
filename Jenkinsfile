@@ -5,6 +5,7 @@ pipeline {
         DOCKER_IMAGE = 'qbittorrentofficial/qbittorrent-nox:latest'
         CONTAINER_NAME = 'qbittorrent-nox'
         USERNAME = sh(script: 'echo $USER', returnStdout: true).trim()
+        CONFIG_PATH = '/home/docker/qbittorrentofficial/config'
     }
 
     stages {
@@ -34,6 +35,7 @@ pipeline {
                         --stop-timeout 1800 \\
                         --tmpfs /tmp \\
                         -v ./config:/config \\
+                        -v ${CONFIG_PATH}:/config \\
                         -v /media/${USERNAME}/Media:/Media \\
                         -v /media/${USERNAME}/Media/Downloads:/downloads \\
                         -v /media/${USERNAME}/Media/Movies:/Movies \\
