@@ -33,7 +33,6 @@ pipeline {
                         --read-only \
                         --stop-timeout 1800 \
                         --tmpfs /tmp \
-                        -v ./config:/config \
                         -v ${CONFIG_PATH}:/config \
                         -v /media/Media:/Media \
                         -v /media/Media/Downloads:/downloads \
