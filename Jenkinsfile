@@ -20,7 +20,7 @@ pipeline {
             steps {
                 script {
                     sh """
-                        docker run -d \
+                    docker run -d \
                         --name ${CONTAINER_NAME} \
                         --restart always \
                         -e QBT_EULA=accept \
@@ -39,7 +39,7 @@ pipeline {
                         -v /media/Media/Downloads:/downloads \
                         -v /media/Media/Movies:/Movies \
                         -v /media/Media/MyMovies:/MyMovies \
-                        -v /media/Media/TVShows:/TVShows \        
+                        -v /media/Media/TVShows:/TVShows \
                         -v /media/Media/MyTVShows:/MyTVShows \
                         ${DOCKER_IMAGE}
                     """
