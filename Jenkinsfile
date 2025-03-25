@@ -16,7 +16,7 @@ pipeline {
             }
         }
 
-        stage('Run Container') {
+        stage('Deploy Docker Image') {
             steps {
                 script {
                     sh """
@@ -44,18 +44,6 @@ pipeline {
                     """
                 }
             }
-        }
-
-        stage('Post Steps') {
-            steps {
-                echo 'Container is up and running.'
-            }
-        }
-    }
-
-    post {
-        always {
-            echo 'Pipeline execution completed.'
         }
     }
 }
