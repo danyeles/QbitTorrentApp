@@ -45,5 +45,14 @@ pipeline {
                 }
             }
         }
+        stage('Get Temporary password') {
+            steps {
+                script {
+                    sh """
+                    docker logs qbittorrent-nox
+                    """
+                }
+            }
+        }
     }
 }
