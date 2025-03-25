@@ -57,11 +57,5 @@ pipeline {
         always {
             echo 'Pipeline execution completed.'
         }
-        cleanup {
-            script {
-                sh "docker stop ${CONTAINER_NAME} || true"
-                sh "docker rm ${CONTAINER_NAME} || true"
-            }
-        }
     }
 }
