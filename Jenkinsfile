@@ -4,7 +4,6 @@ pipeline {
     environment {
         DOCKER_IMAGE = 'qbittorrentofficial/qbittorrent-nox:latest'
         CONTAINER_NAME = 'qbittorrent-nox'
-        USERNAME = params.LOCAL_USER  // Use the parameter here
         CONFIG_PATH = '/home/docker/qbittorrentofficial/config'
     }
 
@@ -36,12 +35,12 @@ pipeline {
                         --tmpfs /tmp \\
                         -v ./config:/config \\
                         -v ${CONFIG_PATH}:/config \\
-                        -v /media/${USERNAME}/Media:/Media \\
-                        -v /media/${USERNAME}/Media/Downloads:/downloads \\
-                        -v /media/${USERNAME}/Media/Movies:/Movies \\
-                        -v /media/${USERNAME}/Media/MyMovies:/MyMovies \\
-                        -v /media/${USERNAME}/Media/TVShows:/TVShows \\                        
-                        -v /media/${USERNAME}/Media/MyTVShows:/MyTVShows \\
+                        -v /media/Media:/Media \\
+                        -v /media/Media/Downloads:/downloads \\
+                        -v /media/Media/Movies:/Movies \\
+                        -v /media/Media/MyMovies:/MyMovies \\
+                        -v /media/Media/TVShows:/TVShows \\                        
+                        -v /media/Media/MyTVShows:/MyTVShows \\
                         ${DOCKER_IMAGE}
                     """
                 }
