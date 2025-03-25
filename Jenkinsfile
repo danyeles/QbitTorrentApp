@@ -4,7 +4,7 @@ pipeline {
     environment {
         DOCKER_IMAGE = 'qbittorrentofficial/qbittorrent-nox:latest'
         CONTAINER_NAME = 'qbittorrent-nox'
-        USERNAME = sh(script: 'echo $USER', returnStdout: true).trim()
+        USERNAME = params.LOCAL_USER  // Use the parameter here
         CONFIG_PATH = '/home/docker/qbittorrentofficial/config'
     }
 
